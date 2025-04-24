@@ -71,12 +71,6 @@
       >Учетная запись с такими данными уже существует.
       </span>
 
-      {{ isLoading }}
-      {{ isFormValid }}
-      {{ showErrors }}
-      {{ (!isFormValid && showErrors) }}
-      {{ isLoading || (!isFormValid && showErrors) }}
-
       <Button rounded class="mt-6" type="submit" :disabled="isLoading || (!isFormValid && showErrors)">
         Зарегистрироваться
       </Button>
@@ -96,7 +90,7 @@ import { useForm } from 'vee-validate'
 
 definePageMeta({
   auth: false,
-  title: 'Регистрация в "Мой Сам"',
+  title: 'Регистрация в "Мой Не Сам"',
   layout: 'auth'
 })
 

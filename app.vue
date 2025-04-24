@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Мой сам'
+  title: 'Мой Не Сам!'
 })
 </script>
 

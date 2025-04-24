@@ -52,7 +52,7 @@ import { useForm } from 'vee-validate'
 
 definePageMeta({
   auth: false,
-  title: 'Вход в "Мой Сам"',
+  title: 'Вход в "Мой Не Сам"',
   layout: 'auth'
 })
 
