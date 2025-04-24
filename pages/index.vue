@@ -16,15 +16,17 @@
       С «Мой Не Сам» вам не придется тратить время и силы на уборку — просто наслаждайтесь чистотой и комфортом! 🧹✨
     </p>
 
-    <app-card v-if="isLoggedIn" container-class="flex justify-between items-center">
+    <app-card v-if="isLoggedIn" container-class="flex items-center">
       <h3>Добро пожаловать, <span class="text-primary">{{ account.username }}</span>!</h3>
+
+      <div class="spacer" />
 
       <Button v-if="account.role == 'Admin'" v-slot="slotProps" as-child>
         <RouterLink to="/admin" :class="slotProps.class">
           Админка
         </RouterLink>
       </Button>
-      <Button v-else v-slot="slotProps" as-child>
+      <Button v-slot="slotProps" as-child variant="text">
         <RouterLink to="/profile" :class="slotProps.class">
           Личный кабинет
         </RouterLink>

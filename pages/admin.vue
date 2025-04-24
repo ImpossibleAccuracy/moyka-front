@@ -92,7 +92,8 @@
 
 <script setup lang="ts">
 definePageMeta({
-  auth: true
+  auth: true,
+  role: 'Admin'
 })
 
 interface OrderFull {
