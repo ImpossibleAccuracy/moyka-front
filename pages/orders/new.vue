@@ -72,9 +72,7 @@ import { useToast } from 'primevue/usetoast'
 
 definePageMeta({
   keepalive: false,
-  meta: {
-    auth: true
-  }
+  auth: true
 })
 
 interface Service {

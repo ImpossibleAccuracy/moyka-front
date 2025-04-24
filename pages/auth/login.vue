@@ -6,7 +6,7 @@
       </h1>
 
       <h3 class="text-lg text-secondary max-xl:text-center">
-        Пожалуйста, введите свои данны
+        Пожалуйста, введите свои данные
       </h3>
 
       <input-validated

@@ -25,9 +25,36 @@
 
       <div class="orders mt-4 flex flex-col gap-2">
         <template v-if="orders.length > 0">
-          <div v-for="order in orders" :key="order.id" class="order">
-            {{ order.address }}
-          </div>
+          <app-card v-for="order in orders" :key="order.id" container-class="flex items-center gap-4">
+            <div class="w-full flex flex-col gap-2">
+              <div class="flex gap-2 items-center">
+                <i class="pi pi-building" />
+                {{ order.address }}
+              </div>
+
+              <div class="flex gap-2 items-center">
+                <i class="pi pi-clock" />
+                <span>{{ order.deliveryDateFormatted }}</span>
+              </div>
+
+              <div class="flex gap-2 items-center">
+                <i class="pi pi-wallet" />
+                <span>{{ order.paymentType }}</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-2 items-center">
+                <span class="whitespace-nowrap">{{ order.status }}</span>
+                <i class="pi pi-flag" />
+              </div>
+
+              <div v-if="!!order.rejectReason" class="flex flex-col items-end">
+                <span class="text-sm text-secondary">Причина:</span>
+                <span class="text-sm font-medium">{{ order.rejectReason }}</span>
+              </div>
+            </div>
+          </app-card>
         </template>
 
         <div v-else class="my-8 flex justify-center">
@@ -40,9 +67,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  meta: {
-    auth: true
-  }
+  auth: true
 })
 
 const { account, logout } = useAppAuth()
@@ -58,6 +83,14 @@ interface Order {
   rejectReason: string;
 }
 
-const orders = await useApiCall<Array<Order>>('/order/my')
+const ordersList = await useApiCall<Array<Order>>('/order/my')
+const orders = computed(() => ordersList?.map((x) => {
+  const date = new Date(x.deliveryDate)
+  return {
+    ...x,
+    deliveryDate: date,
+    deliveryDateFormatted: `${date.getFullYear()}.${date.getMonth().toString().padStart(2, '0')}.${date.getDay().toString().padStart(2, '0')} ${date.getHours().toString().padStart(2, '0')}.${date.getMinutes().toString().padStart(2, '0')}`
+  }
+}))
 
 </script>
