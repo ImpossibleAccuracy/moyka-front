@@ -6,5 +6,8 @@ export default <Partial<Config>>{
   theme: {},
   plugins: [primeui],
 
-  content: ['../src/**/*.{js,ts,vue}']
+  content: ['../src/**/*.{js,ts,vue}'],
+  variants: {
+    display: ['responsive']
+  }
 }

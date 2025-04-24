@@ -3,7 +3,7 @@ export default defineNuxtRouteMiddleware((to) => {
 
   const isLoggedIn = data.value != null
 
-  if (to.meta.auth === true && !isLoggedIn) {
+  if (to.meta?.auth === true && !isLoggedIn) {
     return navigateTo('/auth/login')
   }
 })
