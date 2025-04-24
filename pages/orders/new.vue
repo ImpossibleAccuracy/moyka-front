@@ -82,7 +82,6 @@ interface Service {
 
 const { account } = useAppAuth()
 const toast = useToast()
-const router = useRouter()
 
 const validationSchema = yup.object({
   address: yup.string().min(4).required(),

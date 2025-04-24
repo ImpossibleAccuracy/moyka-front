@@ -7,6 +7,11 @@ body,
   min-height: 100vh;
 }
 
+body {
+  @apply overflow-x-hidden;
+  padding-right: 0 !important;
+}
+
 .material-symbols-outlined {
   @apply leading-none;
 }
@@ -29,10 +34,6 @@ body,
   .p-tabpanels {
     @apply p-0 !important;
   }
-}
-
-.p-chip {
-  @apply cursor-pointer;
 }
 
 .p-button {
