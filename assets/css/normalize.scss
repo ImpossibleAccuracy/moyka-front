@@ -1,0 +1,70 @@
+html,
+body,
+#__nuxt,
+#app,
+.root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.material-symbols-outlined {
+  @apply leading-none;
+}
+
+.p-dialog {
+  min-width: max(20vw, 400px) !important;
+}
+
+.p-datatable-header-cell,
+.p-datatable-tbody > tr {
+  background: none !important;
+}
+
+.p-tabs {
+  .p-tablist-tab-list,
+  .p-tabpanels {
+    background: none !important;
+  }
+
+  .p-tabpanels {
+    @apply p-0 !important;
+  }
+}
+
+.p-chip {
+  @apply cursor-pointer;
+}
+
+.p-button {
+  @apply font-medium;
+}
+
+.p-autocomplete {
+  input {
+    @apply w-full;
+  }
+}
+
+.p-multiselect {
+  &.p-variant-filled {
+    .p-chip {
+      @apply bg-surface-700 bg-opacity-50;
+    }
+  }
+}
+
+.p-avatar {
+  img {
+    @apply object-cover;
+  }
+}
+
+* {
+  @apply [&::-webkit-scrollbar]:w-2;
+  @apply [&::-webkit-scrollbar-track]:rounded-full;
+  @apply [&::-webkit-scrollbar-track]:bg-gray-100;
+  @apply [&::-webkit-scrollbar-thumb]:rounded-full;
+  @apply [&::-webkit-scrollbar-thumb]:bg-gray-300;
+  @apply dark:[&::-webkit-scrollbar-track]:bg-gray-800;
+  @apply dark:[&::-webkit-scrollbar-thumb]:bg-gray-500;
+}

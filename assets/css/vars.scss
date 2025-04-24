@@ -1,0 +1,18 @@
+$header-height: 64px;
+$bg-window-dark: color-mix(in srgb, var(--p-surface-900) 65%, #000) !important;
+$bg-window-light:#fdfdfd !important;
+$navigation-expanded-width: 300px;
+$navigation-collapsed-width: 80px;
+
+:root {
+  --header-height: #{$header-height};
+  --bg-window: #{$bg-window-light};
+  --navigation-collapsed-width: #{$navigation-collapsed-width};
+  --navigation-expanded-width: #{$navigation-expanded-width};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-window: #{$bg-window-dark};
+  }
+}

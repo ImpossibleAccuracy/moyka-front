@@ -1,0 +1,42 @@
+.bg-window {
+  background-color: var(--bg-window);
+}
+
+.\!bg-window {
+  background-color: var(--bg-window) !important;
+}
+
+.text-secondary {
+  @apply text-surface-600 dark:text-surface-400;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.spacer {
+  @apply flex-1;
+}
+
+.col {
+  @apply flex flex-col;
+}
+
+.center {
+  @apply items-center justify-center;
+}
+
+.\!center {
+  @apply items-center justify-center !important;
+}
+
+.capitalize-start {
+  &::first-letter {
+    @apply capitalize;
+  }
+}

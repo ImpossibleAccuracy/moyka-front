@@ -1,0 +1,58 @@
+.markdown {
+  @apply flex flex-col gap-4;
+  @apply overflow-x-hidden;
+
+  h1,
+  h2 {
+    @apply mb-2;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-6xl font-medium;
+  }
+  h2 {
+    @apply text-3xl lg:text-4xl font-medium;
+  }
+  h3 {
+    @apply text-2xl font-medium;
+  }
+  h4 {
+    @apply text-xl;
+  }
+
+  hr {
+    @apply my-4;
+    @apply border-gray-700;
+  }
+
+  blockquote {
+    @apply ps-4 my-4;
+    @apply border-l-4 border-primary;
+  }
+
+  p {
+    code {
+      @apply bg-gray-300 dark:bg-gray-700 rounded px-2;
+    }
+  }
+
+  .shiki {
+    @apply p-4;
+    @apply overflow-auto;
+
+    .line {
+      &::before {
+        content: attr(line);
+        @apply me-4;
+        @apply text-gray-600;
+        @apply font-thin;
+      }
+    }
+  }
+
+  &.code-bg {
+    .shiki {
+      @apply bg-surface-800 dark:bg-gray-800 rounded-xl;
+    }
+  }
+}

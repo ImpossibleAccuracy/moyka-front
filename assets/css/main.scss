@@ -1,0 +1,9 @@
+@import url(./normalize.scss);
+@import url(./vars.scss);
+@import url(./utils.scss);
+
+@media not (prefers-color-scheme: dark) {
+  body {
+    @apply text-surface-700;
+  }
+}
