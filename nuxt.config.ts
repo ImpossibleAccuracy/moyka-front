@@ -11,8 +11,7 @@ export default defineNuxtConfig({
   ],
 
   app: {
-    keepalive: true,
-    baseURL: '/moyka-front/'
+    keepalive: true
   },
   css: ['@/assets/css/main.scss'],
   vite: {
