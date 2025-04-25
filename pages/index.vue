@@ -22,19 +22,19 @@
       <div class="spacer" />
 
       <Button v-if="account.role == 'Admin'" v-slot="slotProps" as-child>
-        <RouterLink to="/admin" :class="slotProps.class">
+        <RouterLink :to="{ name: 'admin' }" :class="slotProps.class">
           Админка
         </RouterLink>
       </Button>
       <Button v-slot="slotProps" as-child variant="text">
-        <RouterLink to="/profile" :class="slotProps.class">
+        <RouterLink :to="{ name: 'profile' }" :class="slotProps.class">
           Личный кабинет
         </RouterLink>
       </Button>
     </app-card>
 
     <Button v-else v-slot="slotProps" as-child>
-      <RouterLink class="mt-10" to="/auth/login" :class="slotProps.class">
+      <RouterLink class="mt-10" :to="{ name: 'auth-login' }" :class="slotProps.class">
         Стать нашим клиентом!
       </RouterLink>
     </Button>
