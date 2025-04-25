@@ -2,7 +2,6 @@ import Aura from '@primevue/themes/aura'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-04-24',
-  devtools: true,
 
   modules: [
     '@sidebase/nuxt-auth',
@@ -12,7 +11,8 @@ export default defineNuxtConfig({
   ],
 
   app: {
-    keepalive: true
+    keepalive: true,
+    baseURL: '/moyka-front/'
   },
   css: ['@/assets/css/main.scss'],
   vite: {
